@@ -1,4 +1,4 @@
-{% set version = '1.1' %}
+{% set version = "1.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/bootSVD_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/bootSVD/bootSVD_{{ version }}.tar.gz
-  sha256: 29eeabd85c47c284f655093399c4ba96b0aad958933eb776a2dbc1bfd1c6a399
+  sha256: 515a08a84073be8a5dcb69970e402d083ef1586a81de1440a3e8305e6542d830
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -37,14 +37,9 @@ test:
 about:
   home: http://arxiv.org/abs/1405.0922
   license: GPL-2.0-only
-  summary: Implements fast, exact bootstrap Principal Component Analysis and Singular Value Decompositions
-    for high dimensional data, as described in <doi:10.1080/01621459.2015.1062383> (see
-    also <arXiv:1405.0922> ). For data matrices that are too large to operate on in
-    memory, users can input objects with class 'ff' (see the 'ff' package), where the
-    actual data is stored on disk. In response, this package will implement a block
-    matrix algebra procedure for calculating the principal components (PCs) and bootstrap
-    PCs. Depending on options set by the user, the 'parallel' package can be used to
-    parallelize the calculation of the bootstrap PCs.
+  summary: Implements fast, exact bootstrap Principal Component Analysis and Singular Value Decompositions for high dimensional data, as described in <doi:10.1080/01621459.2015.1062383> (see also <arXiv:1405.0922> ). For data matrices that are too large to operate on in memory, users can input objects with class 'ff' (see
+    the 'ff' package), where the actual data is stored on disk. In response, this package will implement a block matrix algebra procedure for calculating the principal components (PCs) and bootstrap PCs. Depending on options set by the user, the 'parallel' package can be used to parallelize the calculation of the bootstrap
+    PCs.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
